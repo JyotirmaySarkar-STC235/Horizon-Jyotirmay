@@ -1,26 +1,111 @@
-<section>
-    <h2> My FAQ section</h2>
-    <p>metafields enabled: {{ section.settings.show_metafields }}</p>
+<section class="faq-section" id="faq-{{ section.id }}">
+  <h2 class="faq-heading">My FAQ section</h2>
 
+  {% if product and product.metafields.faq.questions.value.size > 0 %}
+    <div class="faq-list">
+      {% for faq in product.metafields.faq.questions.value %}
+        <div class="faq-item">
+          <button
+            class="faq-question"
+            aria-expanded="false"
+            type="button"
+          >
+            <span>{{ faq.question }}</span>
+            <span class="faq-icon">+</span>
+          </button>
 
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              {{ faq.answer }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 </section>
 
-<style></style>
+<style>
+    .faq-section {
+    max-width: 800px;
+    margin: 40px auto;
+    }
+
+    .faq-heading {
+    margin-bottom: 24px;
+    }
+
+    .faq-item {
+    border-bottom: 1px solid #e5e5e5;
+    }
+
+    .faq-question {
+    width: 100%;
+    padding: 16px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    text-align: left;
+    }
+
+    .faq-icon {
+    transition: transform 0.3s ease;
+    }
+
+    .faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+    }
+
+    .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    }
+
+    .faq-answer-inner {
+    padding: 0 16px 16px;
+    color: #555;
+    line-height: 1.6;
+    }
+
+</style>
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    console.log("Section loaded....")
-      const faqData = {{ product.metafields.faq.questions.value | json }};
+  document.addEventListener("DOMContentLoaded", function () {
+    const section = document.getElementById('faq-{{ section.id }}');
+    if(!section){
+        console.log("SECTION NOT PRESENT.....")
+    }
+    if (!section) return;
 
-      console.log("FAQ metafields faq =>", faqData);
+    const questions = section.querySelectorAll('.faq-question');
 
-      {% comment %} faqData.forEach(faq => {
-        console.log("Question:", faq.question);
-        console.log("Answer:", faq.answer);
-      }); {% endcomment %}
+    questions.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all
+        questions.forEach((q) => {
+          q.setAttribute('aria-expanded', 'false');
+          q.nextElementSibling.style.maxHeight = null;
+        });
+
+        // Open current
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          const answer = btn.nextElementSibling;
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
     });
-  </script>
+  })
+</script>
+
   {% comment %} {% if page and page.metafields.custom.faq != blank %}
 {% endif %} {% endcomment %}
 
