@@ -1,0 +1,28 @@
+<section>
+    <h2> My FAQ section</h2>
+    <p>metafields enabled: {{ section.settings.show_metafields }}</p>
+</section>
+
+<style></style>
+
+{% schema %}
+    {
+        "name": "My FAQ",
+        "tag": "section",
+        "class": "my-faq",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "show_metafields",
+                "label": "Enable metafields",
+                "default": true
+            }
+           
+        ],
+        "presets": [
+            {
+                "name": "My FAQ"
+            }
+        ]
+    }
+{% endschema %}
