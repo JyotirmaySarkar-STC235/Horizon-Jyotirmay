@@ -1,9 +1,29 @@
 <section>
     <h2> My FAQ section</h2>
     <p>metafields enabled: {{ section.settings.show_metafields }}</p>
+
+
 </section>
 
 <style></style>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    console.log("Section loaded....")
+      const faqData = {{ page.metafields.custom.faq.value | json }};
+
+      console.log("FAQ metafields faq =>", faqData);
+
+      faqData.forEach(faq => {
+        console.log("Question:", faq.question);
+        console.log("Answer:", faq.answer);
+      });
+    });
+  </script>
+  {% comment %} {% if page and page.metafields.custom.faq != blank %}
+{% endif %} {% endcomment %}
+
 
 {% schema %}
     {
@@ -19,6 +39,11 @@
             }
            
         ],
+        "blocks": [
+            {
+                "type": "@theme"
+            }
+        ], 
         "presets": [
             {
                 "name": "My FAQ"
