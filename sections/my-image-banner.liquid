@@ -1,10 +1,6 @@
 <section>
-    {% content_for 'block', type: 'my-image_text', id: 'my-image_text' %}
+    {% content_for 'blocks' %}
 </section>
-
- <section>
-    {% content_for 'block', type: 'dummy1', id: 'dummy1' %}
-</section> 
 
 {% style %}
     
@@ -27,14 +23,6 @@
         "presets": [
             {
                 "name": "My image banner",
-                "blocks": {
-                    "my-image-text": {
-                        "type": "my-image_text"
-                    },
-                    "dummy1":{
-                        "type": "dummy1"
-                    }
-                }
             }
             
         ]
