@@ -394,25 +394,6 @@
         "padding-block-end": 40
       }
     },
-    "my_image_banner_Tca4QK": {
-      "type": "my-image-banner",
-      "blocks": {
-        "my_image_text_KAh4rr": {
-          "type": "my-image_text",
-          "name": "my image + text",
-          "settings": {
-            "text": "Product text",
-            "image": "shopify://shop_images/image_45.png"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "my_image_text_KAh4rr"
-      ],
-      "name": "My image banner",
-      "settings": {}
-    },
     "my_faq_GrTMwT": {
       "type": "my-faq",
       "name": "My FAQ",
@@ -425,7 +406,6 @@
     "hero_jVaWmY",
     "product_list_fa6P9H",
     "hero_G4h8Vm",
-    "my_image_banner_Tca4QK",
     "my_faq_GrTMwT"
   ]
 }
