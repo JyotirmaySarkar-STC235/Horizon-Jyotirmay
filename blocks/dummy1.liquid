@@ -1,0 +1,25 @@
+<div>
+    
+    {% if block.settings.text %}
+        <p>{{ block.settings.text }}</p>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+    "name": "My image + text",
+    "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "text"
+            }
+           
+        ],
+        "presets": [
+            {
+                "name": "Dummy 1"
+            }
+        ]
+}
+{% endschema %}

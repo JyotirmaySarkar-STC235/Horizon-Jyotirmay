@@ -1,0 +1,31 @@
+<div>
+    {% if block.settings.image %}
+        {{ block.settings.image | image_url | img_tag }}
+    {% endif %}
+    {% if block.settings.text %}
+        <p>{{ block.settings.text }}</p>
+    {% endif %}
+</div>
+
+{% schema %}
+{
+    "name": "My image + text",
+    "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "text"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "image"
+            }
+        ],
+        "presets": [
+            {
+                "name": "my image + text"
+            }
+        ]
+}
+{% endschema %}
