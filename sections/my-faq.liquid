@@ -11,7 +11,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
     console.log("Section loaded....")
-      const faqData = {{ product.metafields.faq.questions | json }};
+      const faqData = {{ product.metafields.faq.questions.value | json }};
 
       console.log("FAQ metafields faq =>", faqData);
 
