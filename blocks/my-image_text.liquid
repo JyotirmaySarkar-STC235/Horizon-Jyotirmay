@@ -1,6 +1,6 @@
 <div>
     {% if block.settings.image %}
-        {{ block.settings.image | image_url | img_tag }}
+        {{ block.settings.image | image_url | image_tag }}
     {% endif %}
     {% if block.settings.text %}
         <p>{{ block.settings.text }}</p>
