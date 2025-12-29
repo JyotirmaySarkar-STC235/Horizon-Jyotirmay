@@ -405,22 +405,6 @@
             "image": "shopify://shop_images/image_45.png"
           },
           "blocks": {}
-        },
-        "my-image_text": {
-          "type": "my-image_text",
-          "static": true,
-          "settings": {
-            "text": ""
-          },
-          "blocks": {}
-        },
-        "dummy1": {
-          "type": "dummy1",
-          "static": true,
-          "settings": {
-            "text": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
@@ -428,12 +412,20 @@
       ],
       "name": "My image banner",
       "settings": {}
+    },
+    "my_faq_GrTMwT": {
+      "type": "my-faq",
+      "name": "My FAQ",
+      "settings": {
+        "show_metafields": true
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
     "hero_G4h8Vm",
-    "my_image_banner_Tca4QK"
+    "my_image_banner_Tca4QK",
+    "my_faq_GrTMwT"
   ]
 }
