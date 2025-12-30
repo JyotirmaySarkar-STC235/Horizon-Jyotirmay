@@ -1,5 +1,5 @@
 <div>
-    {%  assign product = block.settings.product %} 
+    {%  assign product = closest.product %} 
     _simple-product-card: {{ product.title }}
 
     {% for product in collection.products %}
