@@ -4,6 +4,8 @@
   assign product = closest.product
 -%}
 
+{{ product.title }}
+
 {% capture children %}
   {% content_for 'blocks', closest.product: product %}
 {% endcapture %}
