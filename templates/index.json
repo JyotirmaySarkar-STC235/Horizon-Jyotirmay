@@ -393,52 +393,11 @@
         "padding-block-start": 0,
         "padding-block-end": 40
       }
-    },
-    "test_section_jzbjc6": {
-      "type": "test-section",
-      "blocks": {
-        "simple_product_card_UTMRta": {
-          "type": "_simple-product-card",
-          "name": "Simple product block",
-          "settings": {
-            "product": "dancing-cactus"
-          },
-          "blocks": {
-            "simple-product-card": {
-              "type": "_product-card",
-              "static": true,
-              "settings": {
-                "product_card_gap": 16,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "block_order": [
-        "simple_product_card_UTMRta"
-      ],
-      "name": "Test section",
-      "settings": {
-        "product": "aquaradiance-essence"
-      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "product_list_fa6P9H",
-    "hero_G4h8Vm",
-    "test_section_jzbjc6"
+    "hero_G4h8Vm"
   ]
 }
