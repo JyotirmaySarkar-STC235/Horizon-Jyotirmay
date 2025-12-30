@@ -1,0 +1,115 @@
+<section class="image-text-button">
+  <div class="image-text-button__content">
+    <p>{{ block.settings.text_content }}</p>
+    {% if block.settings.button_text and block.settings.button_link %}
+      <a href="{{ block.settings.button_link }}" class="image-text-button__button">
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .image-text-button {
+      {% if block.settings.image != blank %}
+        background-image: url({{ block.settings.image | image_url }});
+        background-size: fill;
+        background-position: center;
+      {% endif %}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 300px;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+  }
+
+  /* Text container with solid, half-opacity background */
+  .image-text-button__content {
+    background: rgba(0, 0, 0, 0.5); /* solid color with 50% opacity */
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    max-width: 85%;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    backdrop-filter: saturate(120%) blur(2px);
+  }
+
+  .image-text-button__content p {
+    margin: 0;
+    font-size: 1.5rem; /* per your request */
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+  }
+
+  /* Stylish, modern button */
+  .image-text-button__button {
+    display: inline-block;
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #ff6a00 0%, #ff3d00 100%);
+    color: #fff;
+    padding: 0.7rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(255,80,0,0.15);
+    transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  }
+
+  .image-text-button__button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(255,80,0,0.22);
+    opacity: 0.98;
+  }
+
+  .image-text-button__button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255,93,0,0.12), 0 10px 30px rgba(255,80,0,0.15);
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    .image-text-button__content { padding: 0.8rem 1rem; max-width: 95%; }
+    .image-text-button__content p { font-size: 1.125rem; }
+    .image-text-button__button { padding: 0.6rem 1rem; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Image text button block",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Click Here"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+    },
+    {
+      "type": "text",
+      "id": "text_content",
+      "label": "Text Content",
+      "default": "This is some sample text."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text button block"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,23 @@
+<div>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Test section",
+  "blocks": [
+    {
+      "type": "@theme"
+    },
+    {
+      "type": "_simple-product-card"
+    }
+  ],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Test section"
+    }
+  ]
+}
+{% endschema %}

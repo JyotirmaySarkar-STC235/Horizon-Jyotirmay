@@ -1,0 +1,37 @@
+<div>
+    {%  assign product = block.settings.product %} 
+
+    {% if block.settings.product != blank %}
+        {% content_for 'block', type: '_product-card', id: 'simple-product-card',  closest.product: product %}
+    {% else %}
+            <p>No product available</p>
+    {% endif %}
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Simple product block",
+    "blocks": [
+        {
+            "type": "@theme"
+        },
+        {
+            "type": "_product-card"
+        }
+    ],
+    "settings": [
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Select product"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Simple product block"
+            }
+        ]
+}
+{% endschema %}
