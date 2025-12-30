@@ -3,7 +3,7 @@
     _simple-product-card: {{ product.title }}
 
     {% for product in collection.products %}
-        
+        {% content_for 'block', type: '_product-card', id: 'simple-product-card',  closest.product: product %}
     {% endfor %}
 
     {% if product != blank %}
