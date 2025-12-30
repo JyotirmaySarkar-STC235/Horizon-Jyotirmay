@@ -430,7 +430,9 @@
         "simple_product_card_UTMRta"
       ],
       "name": "Test section",
-      "settings": {}
+      "settings": {
+        "product": "aquaradiance-essence"
+      }
     }
   },
   "order": [
