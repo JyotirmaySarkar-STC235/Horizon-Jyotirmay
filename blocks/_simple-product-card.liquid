@@ -2,7 +2,7 @@
     {%  assign product = block.settings.product %} 
 
     {% if product != blank %}
-        {% content_for 'block', type: '_product-card', id: 'simple-product-card',  product: product %}
+        {% content_for 'block', type: '_product-card', id: 'simple-product-card',  passed_product: product %}
     {% else %}
         <p>No product available</p>
     {% endif %}

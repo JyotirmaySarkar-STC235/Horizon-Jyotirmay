@@ -1,7 +1,7 @@
 
 
 {% liquid
-  assign product = product | default: closest.product
+  assign product = passed_product | default: closest.product
 -%}
 
 {% capture children %}
